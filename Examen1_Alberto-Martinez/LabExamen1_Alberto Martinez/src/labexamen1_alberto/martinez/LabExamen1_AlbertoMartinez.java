@@ -258,6 +258,14 @@ static Scanner sc=new Scanner(System.in);
                                 if (opci.equals("f")){
                                     JOptionPane.showMessageDialog(null, "En proceso");
                                 }
+                                if (opci.equals("h")) {
+                                    int pos;
+                                    String s="", n="";
+                                    n=JOptionPane.showInputDialog("Esta seguro?s/n");
+                                    if (n.equals("s")) {
+                                   usuarios.remove(i);
+                                    }
+                                }
                                 if (opci.equals("l")) {
                                     String s="";
                                     
