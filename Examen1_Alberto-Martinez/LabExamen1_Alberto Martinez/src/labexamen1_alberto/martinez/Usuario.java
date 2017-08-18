@@ -91,8 +91,8 @@ boolean admin;
         return libro;
     }
 
-    public void setLibro(ArrayList<Libros> libro) {
-        this.libro = libro;
+    public void setLibro(Libros libro) {
+        this.libro.add(libro);
     }
 
     public ArrayList<Usuario> getAmigos() {
@@ -114,7 +114,7 @@ boolean admin;
     
     @Override
     public String toString() {
-        return "Usuario:" + usuario + "/ Nombre:" + nombre;
+        return "Usuario:" + usuario + "/ Nombre:" + nombre ;
     }
 
 

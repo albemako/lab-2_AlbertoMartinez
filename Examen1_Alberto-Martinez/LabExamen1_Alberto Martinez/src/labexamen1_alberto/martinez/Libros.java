@@ -15,11 +15,12 @@ public double valor;
 public String edicion;
 public String autor;
 public Date publicacion;
+public int cant;
 
     public Libros() {
     }
 
-    public Libros(String titulo, String descripcion, int puntaje, int copias, String genero, double valor, String edicion, String autor, Date publicacion) {
+    public Libros(String titulo, String descripcion, int puntaje, int copias, String genero, double valor, String edicion, String autor, Date publicacion, int cant) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.puntaje = puntaje;
@@ -29,6 +30,7 @@ public Date publicacion;
         this.edicion = edicion;
         this.autor = autor;
         this.publicacion = publicacion;
+        this.cant=cant;
     }
 
 
@@ -107,9 +109,19 @@ public Date publicacion;
         this.publicacion = publicacion;
     }
 
+    public int getCant() {
+        return cant;
+    }
+
+    public void setCant(int cant) {
+        this.cant = cant;
+    }
+    
+    
+    
     @Override
     public String toString() {
-        return "Titulo: " + titulo + ", copias: " + copias;
+        return "Titulo: " + titulo + ", copias en libreria: " + copias;
     }
 
 

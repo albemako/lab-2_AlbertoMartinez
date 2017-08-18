@@ -33,6 +33,9 @@ static Scanner sc=new Scanner(System.in);
             }
             if (op.equals("a")) {
                 cuenta=JOptionPane.showInputDialog("Tiene cuenta?s/n");
+                if (cuenta==(null)){
+                    cuenta="n";
+                }
                 if (cuenta.equals("s")) {
                                     int resp=1;
                                     String resp2="n";
@@ -54,11 +57,11 @@ static Scanner sc=new Scanner(System.in);
                             String opci="";
                             while ( !opci.equals("s") ) {  
                                 opci=JOptionPane.showInputDialog(""
-                                        + "a-agregar Libro\n"
-                                        + "b-modificar Libro\n"
-                                        + "c-eliminar Libro\n"
-                                        + "d-listar Libreria\n"
-                                        + "s-salir");
+                                        + "a-Agregar Libro\n"
+                                        + "b-Modificar Libro\n"
+                                        + "c-Eliminar Libro\n"
+                                        + "d-Listar Libreria\n"
+                                        + "s-Salir");
                                 if(opci==null){
                                     opci="s";
                                 }
@@ -75,8 +78,26 @@ static Scanner sc=new Scanner(System.in);
                                     String s="";
                                     titulo=JOptionPane.showInputDialog("Titulo");
                                     descripcion=JOptionPane.showInputDialog("Descripcion");
-                                    puntaje=Integer.parseInt(JOptionPane.showInputDialog("Puntaje del 1-5"));
-                                    copias=Integer.parseInt(JOptionPane.showInputDialog("Cuantas copias hay?"));
+                                    int punt;
+                                    do{
+                                        puntaje=Integer.parseInt(JOptionPane.showInputDialog("Puntaje del 1-5"));
+                                        if (puntaje<1||puntaje>5){
+                                            JOptionPane.showMessageDialog(null, "Ingreso un puntaje incorrecto!");
+                                            punt=0;
+                                        }else{
+                                            punt=1;
+                                        }
+                                        }while(punt==0);
+                                    
+                                    do{
+                                        copias=Integer.parseInt(JOptionPane.showInputDialog("Cuantas copias hay?"));
+                                        if (copias<1){
+                                            JOptionPane.showMessageDialog(null, "No puede haber menos de 1 copia!");
+                                            punt=0;
+                                        }else{
+                                            punt=1;
+                                        }
+                                        }while(punt==0);
                                     for (Object t : genero) {
                                         if (t instanceof String) {
                                            s+= ""+t+"\n" ;
@@ -87,7 +108,7 @@ static Scanner sc=new Scanner(System.in);
                                     edicion=JOptionPane.showInputDialog("Edicion");
                                     autor=JOptionPane.showInputDialog("Autor");
                                     //*fecha*
-                                    libreria.add(new Libros(titulo,descripcion,puntaje,copias,gen,valor, edicion, autor, publicacion));                
+                                    libreria.add(new Libros(titulo,descripcion,puntaje,copias,gen,valor, edicion, autor, publicacion, 0));                
                                 }
                                 if (opci.equals("b")) {
                                     int pos;
@@ -137,16 +158,89 @@ static Scanner sc=new Scanner(System.in);
                                 if (opci.equals("c")) {
                                     int pos;
                                     String s="";
-                                    for (Object t : lista) {
-                                        if (t instanceof usuario) {
-                                           s+= ""+lista.indexOf(t)+"- "+t+"\n" ;
+                                    for (Object t : libreria) {
+                                        if (t instanceof Libros) {
+                                           s+= ""+libreria.indexOf(t)+"- "+t+"\n" ;
                                         }
                                     }
                                     pos=Integer.parseInt(
                                       JOptionPane.showInputDialog(s+"\n"+"Que posicion desea Eliminar?")
                                     );
 
-                                   lista.remove(pos);
+                                   libreria.remove(pos);
+                               }
+
+                                if (opci.equals("d")) {
+                                    String s="";
+                                    for (Object t : libreria) {
+                                        if (t instanceof Libros) {
+                                           s+= ""+libreria.indexOf(t)+"- "+t+"\n" ;
+                                        }
+                                    }
+                                    JOptionPane.showMessageDialog(null, s);
+                                }
+                                
+                                resp=1;
+                            }
+                            
+                            
+                            
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Bienvenido " + usuarios.get(i).getNombre());
+                            
+                            
+                            String opci="";
+                            while ( !opci.equals("s") ) {  
+                                opci=JOptionPane.showInputDialog(""
+                                        + "a-Agregar Libro a lista de libros\n"
+                                        + "b-Devolver Libro\n"
+                                        + "c-Ver informacion de un libro de su lista de libros\n"
+                                        + "d-Prestar libro a un amigo\n"
+                                        + "e-Agregar amigo\n"
+                                        + "f-Lista de libros segun Genero favorito\n"
+                                        + "g-Modificar cuenta\n"
+                                        + "h-Eliminar cuenta\n"
+                                        + "l-Lista de mis libros\n"
+                                        + "s-salir");
+                                if(opci==null){
+                                    opci="s";
+                                }
+                                if (opci.equals("a")) {
+                                   
+                                   int pos;
+                                   String s="";
+                                    for (Object t : libreria) {
+                                        if (t instanceof Libros) {
+                                           s+= ""+libreria.indexOf(t)+"- "+t+"\n" ;
+                                        }
+                                    }
+                                    pos=Integer.parseInt(JOptionPane.showInputDialog(s+"\n"+"Que Libro Desea (escriba el numero)?")
+                                    );
+                                     if(libreria.get(pos).getCopias()<1){
+                                         JOptionPane.showMessageDialog(null, "Ya no hay mas copias de este libro");
+                                     }else{
+                                         libreria.get(pos).setCopias(libreria.get(pos).getCopias()-1);
+                                         
+                                     }
+                                    
+                                   usuarios.get(i).setLibro(libreria.get(pos));
+                                   usuarios.get(i).libro.get(usuarios.get(i).getLibro().size()-1).setCant((usuarios.get(i).libro.get(usuarios.get(i).getLibro().size()-1).getCant()+1));
+                                }
+                                if (opci.equals("b")) {
+                                   JOptionPane.showMessageDialog(null, "En proceso");
+                                    int pos;
+                                    String s="";
+                                    
+                                    for (int j = 0; j < usuarios.get(i).getLibro().size(); j++) {
+                                        s+= ""+j+"- "+usuarios.get(i).libro.get(j)+"\n" ;
+                                    }                                  
+                                    pos=Integer.parseInt(JOptionPane.showInputDialog(s+"\n"+"Que Libro Desea (escriba el numero)?"));
+                                    usuarios.get(i).getLibro().remove(pos);
+                                    libreria.get(pos).setCopias(libreria.get(pos).getCopias()+1);
+                                    usuarios.get(i).libro.get(pos).setCant(usuarios.get(i).libro.get(pos).getCant()-1);
+                                }
+                                if (opci.equals("c")) {
+                                  JOptionPane.showMessageDialog(null, "En proceso");  
                                }
 
                                 if (opci.equals("d")) {
@@ -159,16 +253,21 @@ static Scanner sc=new Scanner(System.in);
                                     JOptionPane.showMessageDialog(null, s);
                                 }
                                 if (opci.equals("e")){
-
+                                    JOptionPane.showMessageDialog(null, "En proceso");
                                 }
+                                if (opci.equals("f")){
+                                    JOptionPane.showMessageDialog(null, "En proceso");
+                                }
+                                if (opci.equals("l")) {
+                                    String s="";
+                                    
+                                    for (int j = 0; j < usuarios.get(i).getLibro().size(); j++) {
+                                        s+= ""+usuarios.get(i).libro.get(j)+"cantidad en mano: "+usuarios.get(i).libro.get(j).getCant()+"\n" ;
+                                    }
+                                    JOptionPane.showMessageDialog(null, s);
+                                }
+                                
                             }
-                            
-                            
-                            
-                            resp=1;
-                        }else{
-                            JOptionPane.showMessageDialog(null, "Bienvenido " + usuarios.get(i).getNombre());
-                            
                             
                             
                             resp=1;
