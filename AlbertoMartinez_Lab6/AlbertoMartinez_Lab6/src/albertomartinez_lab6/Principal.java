@@ -6,6 +6,7 @@
 package albertomartinez_lab6;
 
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -67,13 +68,15 @@ public class Principal extends javax.swing.JFrame {
         jd_carretera = new javax.swing.JDialog();
         jd_listar = new javax.swing.JDialog();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla1 = new javax.swing.JTable();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
+        jt_lugares = new javax.swing.JTree();
         jButton12 = new javax.swing.JButton();
+        menu_popup = new javax.swing.JPopupMenu();
+        opcion_eliminar = new javax.swing.JMenuItem();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -380,9 +383,9 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 430, Short.MAX_VALUE)
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null}
+
             },
             new String [] {
                 "Nombre", "Direccion", "Numero de seguridad"
@@ -396,9 +399,19 @@ public class Principal extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        tabla1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabla1MouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tabla1);
 
         jButton9.setText("Restaurantes");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setText("Canchas");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -408,10 +421,15 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jButton11.setText("Carreteras");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Categorias");
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane2.setViewportView(jTree1);
+        jt_lugares.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane2.setViewportView(jt_lugares);
 
         jButton12.setText("Por categorias");
 
@@ -433,7 +451,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jd_listarLayout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(19, Short.MAX_VALUE))
+                        .addContainerGap(20, Short.MAX_VALUE))
                     .addGroup(jd_listarLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -457,6 +475,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
+
+        opcion_eliminar.setText("Eliminar lugar");
+        menu_popup.add(opcion_eliminar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
@@ -542,16 +563,16 @@ public class Principal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(32, 32, 32)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(30, 30, 30)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -650,7 +671,37 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
+        //Limpiar tabla
+        tabla1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Direccion", "Numero de seguridad"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        
+        //llenar tabla
+        DefaultTableModel modelo=(DefaultTableModel)tabla1.getModel();
+        
+        for (int i = 0; i < lugares.size(); i++) {
+            if(lugares.get(i) instanceof Canchas){
+            Object[] newrow={
+               lugares.get(i).getNombre(), lugares.get(i).getDireccion(), lugares.get(i).getSeguridad()
+            };
+            modelo.addRow(newrow);
+            tabla1.setModel(modelo);
+            }
+        }
+        
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -659,6 +710,69 @@ public class Principal extends javax.swing.JFrame {
         jd_listar.setLocationRelativeTo(this);
         jd_listar.setVisible(true);
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        //limpiar tabla
+        tabla1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Direccion", "Numero de seguridad"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        
+        //llenar tabla
+        DefaultTableModel modelo=(DefaultTableModel)tabla1.getModel();
+        
+        for (int i = 0; i < lugares.size(); i++) {
+            if(lugares.get(i) instanceof Restaurantes){
+            Object[] newrow={
+               lugares.get(i).getNombre(), lugares.get(i).getDireccion(), lugares.get(i).getSeguridad()
+            };
+            modelo.addRow(newrow);
+            tabla1.setModel(modelo);
+            }
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        //limpiar tabla
+        tabla1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Direccion", "Numero de seguridad"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        
+        //llenar tabla
+        
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void tabla1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabla1MouseClicked
+        if (evt.isMetaDown()) {
+
+            
+        }
+    }//GEN-LAST:event_tabla1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -731,17 +845,19 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTree jTree1;
     private javax.swing.JDialog jd_cancha;
     private javax.swing.JDialog jd_carretera;
     private javax.swing.JDialog jd_casa;
     private javax.swing.JDialog jd_listar;
     private javax.swing.JDialog jd_rest;
+    private javax.swing.JTree jt_lugares;
+    private javax.swing.JPopupMenu menu_popup;
+    private javax.swing.JMenuItem opcion_eliminar;
     private javax.swing.JSpinner s_calificacion;
     private javax.swing.JSpinner s_seguridad;
     private javax.swing.JSpinner s_seguridad1;
     private javax.swing.JSpinner s_seguridad2;
+    private javax.swing.JTable tabla1;
     private javax.swing.JTextField tf_direccion;
     private javax.swing.JTextField tf_direccion1;
     private javax.swing.JTextField tf_direccion2;
@@ -750,4 +866,5 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_nombre2;
     // End of variables declaration//GEN-END:variables
     ArrayList <Lugares> lugares=new ArrayList();
+   
 }
