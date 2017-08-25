@@ -12,6 +12,53 @@ package proyectolab_albertomartinez;
 public class Rebeldes extends Figuras{
 
     public String[][] Movimiento(int pos1, int pos2, int nuevapos1, int nuevapos2, String[][] Tablero) {
+        //mover
+        Tablero[nuevapos1][nuevapos2] = Tablero[pos1][pos2];
+        Tablero[pos1][pos2] = "   ";
+        
+        //comer
+        if (Tablero[nuevapos1][nuevapos2+1].equals(" o ")) {
+            if (Tablero[nuevapos1][nuevapos2+2].equals(" • ")) {
+                Tablero[nuevapos1][nuevapos2+1]="   ";
+            }
+        }
+        if (Tablero[nuevapos1][nuevapos2-1].equals(" o ")) {
+            if (Tablero[nuevapos1][nuevapos2-2].equals(" • ")) {
+                Tablero[nuevapos1][nuevapos2-1]="   ";
+            }
+        }
+        if (Tablero[nuevapos1+1][nuevapos2].equals(" o ")) {
+            if (Tablero[nuevapos1+2][nuevapos2].equals(" • ")) {
+                Tablero[nuevapos1+1][nuevapos2]="   ";
+            }
+        }
+        if (Tablero[nuevapos1-1][nuevapos2].equals(" o ")) {
+            if (Tablero[nuevapos1-2][nuevapos2].equals(" • ")) {
+                Tablero[nuevapos1-1][nuevapos2]="   ";
+            }
+        }
+        
+        //comer al Rey
+        if (Tablero[nuevapos1][nuevapos2+1].equals("{o}")) {
+            if (Tablero[nuevapos1][nuevapos2+2].equals(" • ")&&Tablero[nuevapos1+1][nuevapos2+1].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2+1].equals(" • ")) {
+                Tablero[nuevapos1][nuevapos2+1]="   ";
+            }
+        }
+        if (Tablero[nuevapos1][nuevapos2-1].equals("{o}")) {
+            if (Tablero[nuevapos1][nuevapos2-2].equals(" • ")&&Tablero[nuevapos1+1][nuevapos2-1].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2-1].equals(" • ")) {
+                Tablero[nuevapos1][nuevapos2-1]="   ";
+            }
+        }
+        if (Tablero[nuevapos1+1][nuevapos2].equals("{o}")) {
+            if (Tablero[nuevapos1+2][nuevapos2].equals(" • ")&&Tablero[nuevapos1+1][nuevapos2+1].equals(" • ")&&Tablero[nuevapos1+1][nuevapos2-1].equals(" • ")) {
+                Tablero[nuevapos1+1][nuevapos2]="   ";
+            }
+        }
+        if (Tablero[nuevapos1-1][nuevapos2].equals("{o}")) {
+            if (Tablero[nuevapos1-2][nuevapos2].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2+1].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2-1].equals(" • ")) {
+                Tablero[nuevapos1-1][nuevapos2]="   ";
+            }
+        }
         
         return Tablero;
     }
