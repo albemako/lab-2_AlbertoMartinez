@@ -96,11 +96,11 @@ public class ProyectoLab_AlbertoMartinez {
                             
                         }
                     }
-                    
+                    win=1;
                     for (int i = 0; i < Tablero.length; i++) {
                         for (int j = 0; j < Tablero[i].length; j++) {
                             if (Tablero[i][j].equals("{o}")) {
-                                win=1;
+                                win=0;
                             }
  
 
@@ -242,6 +242,7 @@ public class ProyectoLab_AlbertoMartinez {
                 cont++;
             }
         }while(win==0);
+        Imprimir(Tablero);
         if (win==1) {
             System.out.println("Felicidades " + Jugador1+" GANASTE!");
         }
