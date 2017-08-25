@@ -6,6 +6,7 @@
 package proyectolab_albertomartinez;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 
 public class ProyectoLab_AlbertoMartinez {
@@ -17,7 +18,7 @@ public class ProyectoLab_AlbertoMartinez {
     
     public static void main(String[] args) {
         
-        int cont=2, turnos;
+        int cont=2;
         String Jugador1, Jugador2;
         Imprimir(Tablero);
         System.out.println("Escoja su nombre jugador 1");
@@ -25,77 +26,98 @@ public class ProyectoLab_AlbertoMartinez {
         System.out.println("Escoja su nombre jugador 2");
         Jugador2 = sc.next();
         
-        System.out.println("Cuantos turnos?");
-        turnos=sc.nextInt();
         //variable de control para ganar
         int win=0;
         do{
         
-        int resp;
+        int resp, fuera ,x, x1,y,y1;
             if (cont%2==0) {
                 do{
+                    
                     resp=2;
+                    do{
+                    fuera=1;
                     Imprimir(Tablero);
                     System.out.println("");
                     System.out.println("Es el turno de " + Jugador1+"!");
+                    System.out.println("Si escoje una posicion fuera del tablero se le volvera a preguntar");
                     System.out.println("Escoja la posicion x:");
-                    int x = sc.nextInt();
+                    x = sc.nextInt();
                     System.out.println("y:");
-                    int y = sc.nextInt();
+                    y = sc.nextInt();
                     System.out.println("Escoja la posicion a mover x:");
-                    int x1 = sc.nextInt();
+                    x1 = sc.nextInt();
                     System.out.println("y:");
-                    int y1 = sc.nextInt();
-                    if (" • ".equals(Tablero[x][y])  ) {
-                        if (x==x1) {
-                            if(y<y1){
-                                for (int i = y+1; i <= y1; i++) {
-                                    if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
-                                        System.out.println("");
-                                        resp=3;
-                                        System.out.println("hola");
-                                    }
+                    y1 = sc.nextInt();
+                    
+                    if(x<20&&y<20&&x1<20&&y1<20&&x>0&&y>0&&x1>0&&y1>0){
+                        fuera=2;
+                    }
+                    
+                    }while(fuera==1);
+                        if (" • ".equals(Tablero[x][y])  ) {
+                            resp=1;
+                            if (x==x1||y==y1) {
+                            if (x==x1) {
+                                if(y<y1){
+                                    for (int i = y+1; i <= y1; i++) {
+                                        if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
+                                            System.out.println("");
+                                            resp=3;
+                                            System.out.println("hola");
+                                        }
 
-                                }
-                            }if(y1<y){
-                                for (int i = y-1; i >= y1; i--) {
-                                    if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
-                                        System.out.println("");
-                                        resp=3;
-                                        
                                     }
+                                }if(y1<y){
+                                    for (int i = y-1; i >= y1; i--) {
+                                        if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
+                                            System.out.println("");
+                                            resp=3;
 
+                                        }
+
+                                    }
                                 }
+
                             }
-
-                        }
-                        if (y==y1) {
                             
-                            if(x<x1){
-                                for (int i = x+1; i <= x1; i++) {
-                                    if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
-                                        System.out.println("");
-                                        resp=3;
-                                    }
-                                }
-                            }else{
-                                for (int i = x-1; i >= x1; i--) {
-                                    if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
-                                        System.out.println("");
-                                        resp=3;
-                                    }
-
-                                }
-                             }
-                           
-                        }
                         
-                        if (resp!=3) {
+                            if (y==y1) {
+
+                                if(x<x1){
+                                    for (int i = x+1; i <= x1; i++) {
+                                        if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
+                                            System.out.println("");
+                                            resp=3;
+                                        }
+                                    }
+                                }else{
+                                    for (int i = x-1; i >= x1; i--) {
+                                        if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
+                                            System.out.println("");
+                                            resp=3;
+                                        }
+
+                                    }
+                                 }
+
+                            }
+                            if (Tablero[x1][y1]==(" X ")) {
+                                resp=4;
+                            }
+                            }else{
+                            resp=5;
+                            }    
+
+                           
+                    
+                   
+                        if (resp<2) {
                             Tablero=b.Movimiento(x, y, x1, y1, Tablero);
                             resp=1;
-                            
                         }
-                    }
+                        }
+                       Validar(resp);
                     win=1;
                     for (int i = 0; i < Tablero.length; i++) {
                         for (int j = 0; j < Tablero[i].length; j++) {
@@ -108,7 +130,7 @@ public class ProyectoLab_AlbertoMartinez {
 
                     }
 
-                }while(resp==2||resp==3);
+                }while(resp==2||resp==3||resp==4||resp==5);
 
 
 
@@ -116,130 +138,153 @@ public class ProyectoLab_AlbertoMartinez {
             }else{
                 do{
                     resp=2;
-                    int x2,x3,y2,y3;
+                    do{
+                    fuera=1;
                     Imprimir(Tablero);
                     System.out.println("");
                     System.out.println("Es el turno de " + Jugador2+"!");
                     System.out.println("Escoja la posicion x:");
-                    int x = sc.nextInt();
+                    x = sc.nextInt();
                     System.out.println("y:");
-                    int y = sc.nextInt();
+                    y = sc.nextInt();
                     System.out.println("Escoja la posicion a mover x:");
-                    int x1 = sc.nextInt();
+                    x1 = sc.nextInt();
                     System.out.println("y:");
-                    int y1 = sc.nextInt();
+                    y1 = sc.nextInt();
                     
-                    if(y<y1){
-                       y2=y;
-                       y3=y1;
-                    }else{
-                       y2=y1;
-                       y3=y;
+                    if(x<20&&y<20&&x1<20&&y1<20&&x>0&&y>0&&x1>0&&y1>0){
+                        fuera=2;
                     }
-                    if(x<x1){
-                       x2=x;
-                       x3=x1;
-                    }else{
-                       x2=x1;
-                       x3=x;
-                    }
+                    }while(fuera==1);
                     
-                    if (" o ".equals(Tablero[x][y])  ) {
-                        if (x==x1) {
-                            if(y<y1){
-                                for (int i = y+1; i <= y1; i++) {
-                                    if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
-                                        System.out.println("");
-                                        resp=3;
-                                    }
-
-                                }
-                            }else{
-                                for (int i = y-1; i >= y1; i--) {
-                                    if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
-                                        System.out.println("");
-                                        resp=3;
-                                    }
-
-                                }
-                            }
-
-                        }
-                        if (y==y1) {
-                            if(x<x1){
-                                for (int i = x+1; i <= x1; i++) {
-                                    if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
-                                        System.out.println("");
-                                        resp=3;
-                                    }
-                                }
-                            }else{
-                                for (int i = x-1; i >= x1; i--) {
-                                    if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
-                                        System.out.println("");
-                                        resp=3;
-                                    }
-
-                                }
-                            }                                                    
-                        }
-                        if ( resp!=3 ) {
-                                Tablero=d.Movimiento(x, y, x1, y1, Tablero);
-                                resp=1; 
-                            }
-                            
-                    }
                     
-                    if ("{o}".equals(Tablero[x][y])  ) {
-                        if (x==x1) {
-                            if(y<y1){
-                                for (int i = y+1; i <= y1; i++) {
-                                    if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
-                                        System.out.println("");
-                                        resp=3;
+                        if (" o ".equals(Tablero[x][y])  ) {
+                            resp=1;
+                            if(x==x1||y==y1){
+                                if (x==x1) {
+                                    if(y<y1){
+                                        for (int i = y+1; i <= y1; i++) {
+                                            if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
+                                                System.out.println("");
+                                                resp=3;
+                                            }
+
+                                        }
+                                    }else{
+                                        for (int i = y-1; i >= y1; i--) {
+                                            if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
+                                                System.out.println("");
+                                                resp=3;
+                                            }
+
+                                        }
                                     }
 
+                                }
+                                if (y==y1) {
+                                    if(x<x1){
+                                        for (int i = x+1; i <= x1; i++) {
+                                            if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
+                                                System.out.println("");
+                                                resp=3;
+                                            }
+                                        }
+                                    }else{
+                                        for (int i = x-1; i >= x1; i--) {
+                                            if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
+                                                System.out.println("");
+                                                resp=3;
+                                            }
+
+                                        }
+                                    }                                                    
+                                }
+                                if (Tablero[x1][y1]==(" X ")) {
+                                        resp=4;
                                 }
                             }else{
-                                for (int i = y-1; i >= y1; i--) {
-                                    if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
-                                        System.out.println("");
-                                        resp=3;
-                                    }
-
-                                }
+                              resp=5;
+                            }   
+                        
+                        
+                    
+                        if ( resp<2 ) {
+                                Tablero=d.Movimiento(x, y, x1, y1, Tablero);   
                             }
-
+                        
                         }
-                        if (y==y1) {
-                            if(x<x1){
-                                for (int i = x+1; i <= x1; i++) {
-                                    if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
-                                        System.out.println("");
-                                        resp=3;
+                        
+                        if (" o ".equals(Tablero[x][y])) {
+                        Validar(resp);
+                        }
+                        
+                    
+                        
+                        if ("{o}".equals(Tablero[x][y])  ) {
+                            resp=1;
+                            if(x==x1||y==y1){
+                                if (x==x1) {
+                                    if(y<y1){
+                                        for (int i = y+1; i <= y1; i++) {
+                                            if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
+                                                System.out.println("");
+                                                resp=3;
+                                                System.out.println("hola1");
+                                            }
+
+                                        }
+                                    }else{
+                                        for (int i = y-1; i >= y1; i--) {
+                                            if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
+                                                System.out.println("");
+                                                resp=3;
+                                                System.out.println("hola2");
+                                            }
+
+                                        }
                                     }
+
+                                }
+                                if (y==y1) {
+                                   if(x<x1){
+                                        for (int i = x+1; i <= x1; i++) {
+                                            if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
+                                                System.out.println("");
+                                                resp=3;
+                                            }
+                                        }
+                                    }else{
+                                        for (int i = x-1; i >= x1; i--) {
+                                            if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
+                                                System.out.println("");
+                                                resp=3;
+                                            }
+
+                                        }
+                                    }     //HACER LA RECURSIVA                
                                 }
                             }else{
-                                for (int i = x-1; i >= x1; i--) {
-                                    if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
-                                        System.out.println("");
-                                        resp=3;
-                                    }
-
-                                }
-                             }                          
-                        }
-                        if ( resp!=3 ) {
+                            resp=5;
+                            }
+                        
+                        
+                    
+                        if ( resp<2 ) {
                                 if (Tablero[x1][y1].equals(" X ")) {
                                 win=2;
                             }
-                                Tablero=r.Movimiento(x, y, x1, y1, Tablero);
-                                resp=1; 
+                                Tablero=r.Movimiento(x, y, x1, y1, Tablero); 
                             }
-                    }
                     
-                }while(resp==2||resp==3);
+                        }
+                        
+                        if (resp==2||"{o}".equals(Tablero[x][y])) {
+                        Validar(resp);
+                    }
+                     
+                }while(resp==2||resp==3||resp==4||resp==5);
                 cont++;
+                
             }
         }while(win==0);
         Imprimir(Tablero);
@@ -405,4 +450,22 @@ public class ProyectoLab_AlbertoMartinez {
             System.out.println("");
         }
     }
+        public static void Validar(int resp){
+            switch(resp){
+                case 2:
+                    JOptionPane.showMessageDialog(null, "Selecciono una coordenada incorrecta");
+                    break;
+                case 3:
+                    JOptionPane.showMessageDialog(null, "No se puede saltar otras piezas!");
+                    break;
+                case 4:
+                    JOptionPane.showMessageDialog(null, "No se puede colocar esa pieza en la X");
+                    break;
+                case 5:
+                    JOptionPane.showMessageDialog(null, "Solo se puede mover en cruz, vuelva a intentar");
+                    break;
+                default:
+                    break;
+            }
+        }
 }

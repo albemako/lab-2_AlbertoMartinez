@@ -38,6 +38,28 @@ public class Rebeldes extends Figuras{
             }
         }
         
+        //comer al Rey en una pared
+        if (Tablero[nuevapos1][19].equals("{o}")) {
+            if (Tablero[nuevapos1+1][nuevapos2+1].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2+1].equals(" • ")) {
+                Tablero[nuevapos1][nuevapos2+1]="   ";
+            }
+        }
+        if (Tablero[nuevapos1][1].equals("{o}")) {
+            if (Tablero[nuevapos1+1][nuevapos2-1].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2-1].equals(" • ")) {
+                Tablero[nuevapos1][nuevapos2-1]="   ";
+            }
+        }
+        if (Tablero[1][nuevapos2].equals("{o}")) {
+            if (Tablero[nuevapos1+1][nuevapos2+1].equals(" • ")&&Tablero[nuevapos1+1][nuevapos2-1].equals(" • ")) {
+                Tablero[nuevapos1+1][nuevapos2]="   ";
+            }
+        }
+        if (Tablero[19][nuevapos2].equals("{o}")) {
+            if (Tablero[nuevapos1-1][nuevapos2+1].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2-1].equals(" • ")) {
+                Tablero[nuevapos1-1][nuevapos2]="   ";
+            }
+        }
+        
         //comer al Rey
         if (Tablero[nuevapos1][nuevapos2+1].equals("{o}")) {
             if (Tablero[nuevapos1][nuevapos2+2].equals(" • ")&&Tablero[nuevapos1+1][nuevapos2+1].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2+1].equals(" • ")) {
