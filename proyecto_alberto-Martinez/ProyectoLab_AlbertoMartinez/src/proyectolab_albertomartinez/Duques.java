@@ -18,22 +18,22 @@ public class Duques extends Figuras{
         
         //comer
         if (Tablero[nuevapos1][nuevapos2+1].equals(" • ")) {
-            if (Tablero[nuevapos1][nuevapos2+2].equals(" o ")||Tablero[nuevapos1][nuevapos2+2].equals("{o}")) {
+            if (Tablero[nuevapos1][nuevapos2+2].equals(" o ")||Tablero[nuevapos1][nuevapos2+2].equals("{o}")||Tablero[nuevapos1][nuevapos2+2].equals(" 0 ")) {
                 Tablero[nuevapos1][nuevapos2+1]="   ";
             }
         }
         if (Tablero[nuevapos1][nuevapos2-1].equals(" • ")) {
-            if (Tablero[nuevapos1][nuevapos2-2].equals(" o ")||Tablero[nuevapos1][nuevapos2-2].equals("{o}")) {
+            if (Tablero[nuevapos1][nuevapos2-2].equals(" o ")||Tablero[nuevapos1][nuevapos2-2].equals("{o}")||Tablero[nuevapos1][nuevapos2-2].equals(" 0 ")) {
                 Tablero[nuevapos1][nuevapos2-1]="   ";
             }
         }
         if (Tablero[nuevapos1+1][nuevapos2].equals(" • ")) {
-            if (Tablero[nuevapos1+2][nuevapos2].equals(" o ")||Tablero[nuevapos1+2][nuevapos2].equals("{o}")) {
+            if (Tablero[nuevapos1+2][nuevapos2].equals(" o ")||Tablero[nuevapos1+2][nuevapos2].equals("{o}")||Tablero[nuevapos1+2][nuevapos2].equals(" 0 ")) {
                 Tablero[nuevapos1+1][nuevapos2]="   ";
             }
         }
         if (Tablero[nuevapos1-1][nuevapos2].equals(" • ")) {
-            if (Tablero[nuevapos1-2][nuevapos2].equals(" o ")||Tablero[nuevapos1-2][nuevapos2].equals("{o}")) {
+            if (Tablero[nuevapos1-2][nuevapos2].equals(" o ")||Tablero[nuevapos1-2][nuevapos2].equals("{o}")||Tablero[nuevapos1-2][nuevapos2].equals(" 0 ")) {
                 Tablero[nuevapos1-1][nuevapos2]="   ";
             }
         }

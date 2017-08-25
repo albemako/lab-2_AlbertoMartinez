@@ -17,14 +17,13 @@ public class ProyectoLab_AlbertoMartinez {
     static Rey r=new Rey();
     
     public static void main(String[] args) {
-        
+        int opcion;
+        do{
+        Tablero = Lectura();
         int cont=2;
         String Jugador1, Jugador2;
-        Imprimir(Tablero);
-        System.out.println("Escoja su nombre jugador 1");
-        Jugador1 = sc.next();
-        System.out.println("Escoja su nombre jugador 2");
-        Jugador2 = sc.next();
+        Jugador1 = JOptionPane.showInputDialog("Nombre del lider de los Rebeldes (Piezas negras)");
+        Jugador2 = JOptionPane.showInputDialog("Nombre del lider de los Duques (Piezas blancas)");
         
         //variable de control para ganar
         int win=0;
@@ -41,13 +40,13 @@ public class ProyectoLab_AlbertoMartinez {
                     System.out.println("");
                     System.out.println("Es el turno de " + Jugador1+"!");
                     System.out.println("Si escoje una posicion fuera del tablero se le volvera a preguntar");
-                    System.out.println("Escoja la posicion x:");
+                    System.out.println("Escoja la Fila:");
                     x = sc.nextInt();
-                    System.out.println("y:");
+                    System.out.println("Columna:");
                     y = sc.nextInt();
-                    System.out.println("Escoja la posicion a mover x:");
+                    System.out.println("Escoja la nueva posicion de fila:");
                     x1 = sc.nextInt();
-                    System.out.println("y:");
+                    System.out.println("columna:");
                     y1 = sc.nextInt();
                     
                     if(x<20&&y<20&&x1<20&&y1<20&&x>0&&y>0&&x1>0&&y1>0){
@@ -61,7 +60,7 @@ public class ProyectoLab_AlbertoMartinez {
                             if (x==x1) {
                                 if(y<y1){
                                     for (int i = y+1; i <= y1; i++) {
-                                        if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
+                                        if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • "||Tablero[x][i] == " 0 ") {
                                             System.out.println("");
                                             resp=3;
                                             System.out.println("hola");
@@ -70,7 +69,7 @@ public class ProyectoLab_AlbertoMartinez {
                                     }
                                 }if(y1<y){
                                     for (int i = y-1; i >= y1; i--) {
-                                        if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
+                                        if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • "||Tablero[x][i] == " 0 ") {
                                             System.out.println("");
                                             resp=3;
 
@@ -86,14 +85,14 @@ public class ProyectoLab_AlbertoMartinez {
 
                                 if(x<x1){
                                     for (int i = x+1; i <= x1; i++) {
-                                        if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
+                                        if (Tablero[i][y] == " o "||Tablero[i][y] == "{o}"||Tablero[i][y] == " • "||Tablero[i][y] == " 0 ") {
                                             System.out.println("");
                                             resp=3;
                                         }
                                     }
                                 }else{
                                     for (int i = x-1; i >= x1; i--) {
-                                        if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
+                                        if (Tablero[i][y] == " o "||Tablero[i][y] == "{o}"||Tablero[i][y] == " • "||Tablero[i][y] == " 0 ") {
                                             System.out.println("");
                                             resp=3;
                                         }
@@ -143,13 +142,13 @@ public class ProyectoLab_AlbertoMartinez {
                     Imprimir(Tablero);
                     System.out.println("");
                     System.out.println("Es el turno de " + Jugador2+"!");
-                    System.out.println("Escoja la posicion x:");
+                    System.out.println("Escoja la Fila:");
                     x = sc.nextInt();
-                    System.out.println("y:");
+                    System.out.println("Columna:");
                     y = sc.nextInt();
-                    System.out.println("Escoja la posicion a mover x:");
+                    System.out.println("Escoja la nueva posicion de fila:");
                     x1 = sc.nextInt();
-                    System.out.println("y:");
+                    System.out.println("columna:");
                     y1 = sc.nextInt();
                     
                     if(x<20&&y<20&&x1<20&&y1<20&&x>0&&y>0&&x1>0&&y1>0){
@@ -158,13 +157,13 @@ public class ProyectoLab_AlbertoMartinez {
                     }while(fuera==1);
                     
                     
-                        if (" o ".equals(Tablero[x][y])  ) {
+                        if (" o ".equals(Tablero[x][y])||" 0 ".equals(Tablero[x][y])   ) {
                             resp=1;
                             if(x==x1||y==y1){
                                 if (x==x1) {
                                     if(y<y1){
                                         for (int i = y+1; i <= y1; i++) {
-                                            if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
+                                            if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • "||Tablero[x][i] == " 0 ") {
                                                 System.out.println("");
                                                 resp=3;
                                             }
@@ -172,7 +171,7 @@ public class ProyectoLab_AlbertoMartinez {
                                         }
                                     }else{
                                         for (int i = y-1; i >= y1; i--) {
-                                            if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
+                                            if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • "||Tablero[x][i] == " 0 ") {
                                                 System.out.println("");
                                                 resp=3;
                                             }
@@ -184,14 +183,14 @@ public class ProyectoLab_AlbertoMartinez {
                                 if (y==y1) {
                                     if(x<x1){
                                         for (int i = x+1; i <= x1; i++) {
-                                            if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
+                                            if (Tablero[i][y] == " o "||Tablero[i][y] == "{o}"||Tablero[i][y] == " • "||Tablero[i][y] == " 0 ") {
                                                 System.out.println("");
                                                 resp=3;
                                             }
                                         }
                                     }else{
                                         for (int i = x-1; i >= x1; i--) {
-                                            if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
+                                            if (Tablero[i][y] == " o "||Tablero[i][y] == "{o}"||Tablero[i][y] == " • "||Tablero[i][y] == " 0 ") {
                                                 System.out.println("");
                                                 resp=3;
                                             }
@@ -214,7 +213,7 @@ public class ProyectoLab_AlbertoMartinez {
                         
                         }
                         
-                        if (" o ".equals(Tablero[x][y])) {
+                        if (" o ".equals(Tablero[x][y])||" 0 ".equals(Tablero[x][y])) {
                         Validar(resp);
                         }
                         
@@ -226,7 +225,7 @@ public class ProyectoLab_AlbertoMartinez {
                                 if (x==x1) {
                                     if(y<y1){
                                         for (int i = y+1; i <= y1; i++) {
-                                            if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
+                                            if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • "||Tablero[x][i] == " 0 ") {
                                                 System.out.println("");
                                                 resp=3;
                                                 System.out.println("hola1");
@@ -235,7 +234,7 @@ public class ProyectoLab_AlbertoMartinez {
                                         }
                                     }else{
                                         for (int i = y-1; i >= y1; i--) {
-                                            if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • ") {
+                                            if (Tablero[x][i] == " o "||Tablero[x][i] == "{o}"||Tablero[x][i] == " • "||Tablero[x][i] == " 0 ") {
                                                 System.out.println("");
                                                 resp=3;
                                                 System.out.println("hola2");
@@ -248,21 +247,24 @@ public class ProyectoLab_AlbertoMartinez {
                                 if (y==y1) {
                                    if(x<x1){
                                         for (int i = x+1; i <= x1; i++) {
-                                            if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
+                                            if (Tablero[i][y] == " o "||Tablero[i][y] == "{o}"||Tablero[i][y] == " • "||Tablero[i][y] == " 0 ") {
                                                 System.out.println("");
                                                 resp=3;
                                             }
                                         }
                                     }else{
                                         for (int i = x-1; i >= x1; i--) {
-                                            if (Tablero[y][i] == " o "||Tablero[y][i] == "{o}"||Tablero[y][i] == " • ") {
+                                            if (Tablero[i][y] == " o "||Tablero[i][y] == "{o}"||Tablero[i][y] == " • "||Tablero[i][y] == " 0 ") {
                                                 System.out.println("");
                                                 resp=3;
                                             }
 
                                         }
-                                    }     //HACER LA RECURSIVA                
+                                    }                  
                                 }
+                                if (Tablero[x1][y1]==(" x ")) {
+                                resp=4;
+                            }
                             }else{
                             resp=5;
                             }
@@ -289,16 +291,18 @@ public class ProyectoLab_AlbertoMartinez {
         }while(win==0);
         Imprimir(Tablero);
         if (win==1) {
-            System.out.println("Felicidades " + Jugador1+" GANASTE!");
+            JOptionPane.showMessageDialog(null, "Felicidades " + Jugador1+" GANASTE!"); 
         }
         if (win==2) {
-            System.out.println("Felicidades " + Jugador2+" GANASTE!");
+            JOptionPane.showMessageDialog(null, "Felicidades " + Jugador2+" GANASTE!");
         }
+        opcion=Integer.parseInt(JOptionPane.showInputDialog("Desea volver a jugar? 0=si, 1=no"));
+        }while(opcion==0);
     }
     
     
     public static String[][] Lectura() {
-        String[][] Temporal = new String[20][20];
+        String[][] Temporal = new String[21][21];
         //duques
         Temporal[9][5] = " o ";
         Temporal[11][5] = " o ";
@@ -307,11 +311,11 @@ public class ProyectoLab_AlbertoMartinez {
         Temporal[11][8] = " o ";
         Temporal[5][9] = " o ";
         Temporal[8][9] = " o ";
-        Temporal[10][9] = " o ";
+        Temporal[10][9] = " 0 ";
         Temporal[12][9] = " o ";
         Temporal[15][9] = " o ";
         Temporal[12][11] = " o ";
-        Temporal[10][11] = " o ";
+        Temporal[10][11] = " 0 ";
         Temporal[8][11] = " o ";
         Temporal[5][11] = " o ";
         Temporal[15][11] = " o ";
@@ -321,8 +325,8 @@ public class ProyectoLab_AlbertoMartinez {
         Temporal[9][15] = " o ";
         Temporal[11][15] = " o ";
         Temporal[7][10] = " o ";
-        Temporal[9][10] = " o ";
-        Temporal[11][10] = " o ";
+        Temporal[9][10] = " 0 ";
+        Temporal[11][10] = " 0 ";
         Temporal[13][10] = " o ";
         //rey
         Temporal[10][10] = "{o}";
@@ -425,25 +429,43 @@ public class ProyectoLab_AlbertoMartinez {
             
         }
         
-        for (int i = 0; i < Temporal.length; i++) {
-            for (int j = 0; j < Temporal[i].length; j++) {
-                if (Temporal[i][j] == null) {
-                    Temporal[i][j] = "   ";
-                }
-            }
-        }
-        
+        //LLenar los null con recursivo
+        Temporal=LlenarE(Temporal, 0, 0);
 
         return Temporal;
 
     }
+    
+    static String[][] LlenarE(String matriz[][], int filas, int cols){
+        if (filas==matriz.length-1&&cols==matriz[0].length-1){
+            if (matriz[filas][cols] == null) {
+                    matriz[filas][cols] = "   ";
+                }
+            return matriz;
+        }else{
+            if (cols==matriz[0].length-1) {
+                if (matriz[filas][cols] == null) {
+                    matriz[filas][cols] = "   ";
+                }
+                LlenarE(matriz,filas+1,0);
+            } else {
+                if (matriz[filas][cols] == null) {
+                    matriz[filas][cols] = "   ";
+                }
+                
+                LlenarE(matriz,filas,cols+1);
+            }
+        }
+        return matriz;
+    }
+    
         public static void Imprimir(String[][] matriz) {
             if (matriz[10][10].equals("   ")) {
                 matriz[10][10]=" x ";
             }
-        for (int i = 0; i < matriz.length; i++) {
+        for (int i = 0; i < matriz.length-1; i++) {
             System.out.print(" |");
-            for (int j = 0; j < matriz[i].length; j++) {
+            for (int j = 0; j < matriz[i].length-1; j++) {
                 System.out.print(matriz[i][j]);
                 System.out.print("|");
             }

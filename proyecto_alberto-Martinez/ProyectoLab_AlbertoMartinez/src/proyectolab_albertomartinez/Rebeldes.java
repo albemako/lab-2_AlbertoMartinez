@@ -38,27 +38,6 @@ public class Rebeldes extends Figuras{
             }
         }
         
-        //comer al Rey en una pared
-        if (Tablero[nuevapos1][19].equals("{o}")) {
-            if (Tablero[nuevapos1+1][nuevapos2+1].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2+1].equals(" • ")) {
-                Tablero[nuevapos1][nuevapos2+1]="   ";
-            }
-        }
-        if (Tablero[nuevapos1][1].equals("{o}")) {
-            if (Tablero[nuevapos1+1][nuevapos2-1].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2-1].equals(" • ")) {
-                Tablero[nuevapos1][nuevapos2-1]="   ";
-            }
-        }
-        if (Tablero[1][nuevapos2].equals("{o}")) {
-            if (Tablero[nuevapos1+1][nuevapos2+1].equals(" • ")&&Tablero[nuevapos1+1][nuevapos2-1].equals(" • ")) {
-                Tablero[nuevapos1+1][nuevapos2]="   ";
-            }
-        }
-        if (Tablero[19][nuevapos2].equals("{o}")) {
-            if (Tablero[nuevapos1-1][nuevapos2+1].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2-1].equals(" • ")) {
-                Tablero[nuevapos1-1][nuevapos2]="   ";
-            }
-        }
         
         //comer al Rey
         if (Tablero[nuevapos1][nuevapos2+1].equals("{o}")) {
@@ -79,6 +58,55 @@ public class Rebeldes extends Figuras{
         if (Tablero[nuevapos1-1][nuevapos2].equals("{o}")) {
             if (Tablero[nuevapos1-2][nuevapos2].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2+1].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2-1].equals(" • ")) {
                 Tablero[nuevapos1-1][nuevapos2]="   ";
+            }
+        }
+        
+                //comer al Rey en una pared
+        if (Tablero[nuevapos1][19].equals("{o}")) {
+            if (Tablero[nuevapos1+1][nuevapos2+1].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2+1].equals(" • ")) {
+                Tablero[nuevapos1][19]="   ";
+            }
+        }
+        if (Tablero[nuevapos1][1].equals("{o}")) {
+            if (Tablero[nuevapos1+1][nuevapos2-1].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2-1].equals(" • ")) {
+                Tablero[nuevapos1][1]="   ";
+            }
+        }
+        if (Tablero[19][nuevapos2].equals("{o}")) {
+            System.out.println("hola1");
+            if (Tablero[nuevapos1+1][nuevapos2+1].equals(" • ")&&Tablero[nuevapos1+1][nuevapos2-1].equals(" • ")) {
+                Tablero[19][nuevapos2]="   ";
+            }
+        }
+        if (Tablero[1][nuevapos2].equals("{o}")) {
+            System.out.println("hola2");
+            if (Tablero[nuevapos1-1][nuevapos2+1].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2-1].equals(" • ")) {
+                
+                Tablero[1][nuevapos2]="   ";
+            }
+        }
+        
+        //comer al Rey en su castillo
+        if (Tablero[nuevapos1][9].equals("{o}")) {
+            if (Tablero[nuevapos1+1][nuevapos2+1].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2+1].equals(" • ")) {
+                Tablero[nuevapos1][9]="   ";
+            }
+        }
+        if (Tablero[nuevapos1][11].equals("{o}")) {
+            if (Tablero[nuevapos1+1][nuevapos2-1].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2-1].equals(" • ")) {
+                Tablero[nuevapos1][11]="   ";
+            }
+        }
+        if (Tablero[9][nuevapos2].equals("{o}")) {
+            
+            if (Tablero[nuevapos1+1][nuevapos2+1].equals(" • ")&&Tablero[nuevapos1+1][nuevapos2-1].equals(" • ")) {
+                Tablero[9][nuevapos2]="   ";
+            }
+        }
+        if (Tablero[11][nuevapos2].equals("{o}")) {
+            if (Tablero[nuevapos1-1][nuevapos2+1].equals(" • ")&&Tablero[nuevapos1-1][nuevapos2-1].equals(" • ")) {
+                
+                Tablero[11][nuevapos2]="   ";
             }
         }
         
