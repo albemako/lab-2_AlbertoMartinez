@@ -18,6 +18,7 @@ static Scanner sc=new Scanner(System.in);
         genero.add("Accion");
         genero.add("Historia");
         Date fecha = null;
+
         
         //agregar admin
         usuarios.add(new Usuario("admin", "hola", fecha, 31943173, "albemako@yahoo.com", "alberto", "accion", true));
