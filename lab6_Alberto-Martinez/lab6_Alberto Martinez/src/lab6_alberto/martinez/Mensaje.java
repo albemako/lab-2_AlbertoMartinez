@@ -10,16 +10,28 @@ package lab6_alberto.martinez;
  * @author Alberto
  */
 public class Mensaje {
+    public String correo;
     public String mensaje;
     public String estado;
 
     public Mensaje() {
     }
 
-    public Mensaje(String mensaje, String estado) {
+    public Mensaje(String correo, String mensaje, String estado) {
+        this.correo = correo;
         this.mensaje = mensaje;
         this.estado = estado;
     }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+
 
     public String getMensaje() {
         return mensaje;
