@@ -31,7 +31,7 @@ public class Lugar extends Thread{
     }
 
 
-    public Lugar(String nombre, String clima, int extension, int habitantes, String zona, int fundacion, TablaDePersonas tdp) {
+    public Lugar(String nombre, String clima, int extension, int habitantes, String zona, int fundacion, TablaDePersonas tdp, ArrayList listapersonas) {
         this.nombre = nombre;
         this.clima = clima;
         this.extension = extension;
@@ -39,6 +39,7 @@ public class Lugar extends Thread{
         this.zona = zona;
         this.fundacion = fundacion;
         this.tdp = tdp;
+        this.listapersonas=listapersonas;
     }
 
     
@@ -103,14 +104,13 @@ public class Lugar extends Thread{
         
             TablaDePersonas tp=new TablaDePersonas();
             principal p=new principal();
-            System.out.println(nombre);
             tp.jl_nombre.setText(nombre);
             tp.pack();
             tp.setVisible(true);
-            
+            System.out.println(listapersonas.size());
             
             while(true){
-                System.out.println("hola");
+                
                 tp.jt_personas.setModel(new javax.swing.table.DefaultTableModel(
                          new Object [][] {
 
@@ -121,15 +121,17 @@ public class Lugar extends Thread{
                      ));
 
                 DefaultTableModel modelo=(DefaultTableModel)tp.jt_personas.getModel();
-
-                for (int i = 0; i < p.personas.size(); i++) {
-                    if(p.personas.get(i).getLugar().equals(nombre)){
-                    Object[] newrow={p.personas.get(i).getNombre(), p.personas.get(i).getId(), p.personas.get(i).getLugar(),p.personas.get(i).getEdad(), p.personas.get(i).getEstatura(), p.personas.get(i).getProfesion()};
+                
+                for (int i = 0; i < listapersonas.size(); i++) {
+                    System.out.println(listapersonas.get(i).getLugar());
+                    if(listapersonas.get(i).getLugar().equals(tp.jl_nombre.getText())){
+                        
+                    Object[] newrow={listapersonas.get(i).getNombre(), listapersonas.get(i).getId(), listapersonas.get(i).getLugar(),listapersonas.get(i).getEdad(), listapersonas.get(i).getEstatura(), listapersonas.get(i).getProfesion()};
                     modelo.addRow(newrow);
-                    
+                    tp.jt_personas.setModel(modelo);
                     }
                 }
-                tp.jt_personas.setModel(modelo);
+                
                 try {
                     Thread.sleep(2000);
                 } catch (InterruptedException ex) {

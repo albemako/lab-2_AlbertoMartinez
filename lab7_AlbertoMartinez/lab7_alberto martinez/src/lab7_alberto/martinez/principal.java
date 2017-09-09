@@ -301,9 +301,9 @@ public class principal extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton3)
+                    .addComponent(jButton2))
                 .addGap(16, 16, 16))
         );
 
@@ -320,10 +320,10 @@ public class principal extends javax.swing.JFrame {
         
         try {
 
-            lugares.add(new Lugar(tf_nlugar.getText(), tf_clima.getText(), Integer.parseInt(tf_extension.getText()), Integer.parseInt(tf_habitantes.getText()), cb_zona.getSelectedItem().toString(), Integer.parseInt(tf_fundacion.getText()),tp));
-            L=new Lugar(tf_nlugar.getText(), tf_clima.getText(), Integer.parseInt(tf_extension.getText()), Integer.parseInt(tf_habitantes.getText()), cb_zona.getSelectedItem().toString(), Integer.parseInt(tf_fundacion.getText()),tp);
+            lugares.add(new Lugar(tf_nlugar.getText(), tf_clima.getText(), Integer.parseInt(tf_extension.getText()), Integer.parseInt(tf_habitantes.getText()), cb_zona.getSelectedItem().toString(), Integer.parseInt(tf_fundacion.getText()),tp, personas));
+            L=new Lugar(tf_nlugar.getText(), tf_clima.getText(), Integer.parseInt(tf_extension.getText()), Integer.parseInt(tf_habitantes.getText()), cb_zona.getSelectedItem().toString(), Integer.parseInt(tf_fundacion.getText()),tp, personas);
             JOptionPane.showMessageDialog(null, "Lugar Creado Exitosamente");
-            L.run();
+            L.start();
             //resetear controles
             tf_nlugar.setText("");
             tf_clima.setText("");
