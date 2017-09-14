@@ -23,9 +23,6 @@ public class Hadas {
         this.estatura = estatura;
     }
 
-    public int getSalud(){
-        return 0;
-    }
     public String getNombre() {
         return nombre;
     }

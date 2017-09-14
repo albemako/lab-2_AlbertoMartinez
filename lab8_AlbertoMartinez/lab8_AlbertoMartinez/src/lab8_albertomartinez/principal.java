@@ -6,6 +6,7 @@
 package lab8_albertomartinez;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -45,6 +46,11 @@ public class principal extends javax.swing.JFrame {
         jButton5.setBackground(new java.awt.Color(0, 102, 255));
         jButton5.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jButton5.setText("Lamias");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setBackground(new java.awt.Color(102, 204, 0));
         jButton6.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
@@ -195,23 +201,25 @@ public class principal extends javax.swing.JFrame {
             jt_hadas.setModel(modelo);
             }
             if(hadas.get(i) instanceof Hamadriades){
-            H
+            Hamadriades hamadriade=(Hamadriades)hadas.get(i);
             Object[] newrow={
-               hadas.get(i).getNombre(), lugares.get(i).getDireccion(), lugares.get(i).getSeguridad()
+               hamadriade.getNombre(), "Hamadriade", hamadriade.getSalud(), hamadriade.getDaño()
             };
             modelo.addRow(newrow);
             jt_hadas.setModel(modelo);
             }
             if(hadas.get(i) instanceof Silfides){
+                 Silfides silfide= (Silfides)hadas.get(i);
             Object[] newrow={
-               hadas.get(i).getNombre(), lugares.get(i).getDireccion(), lugares.get(i).getSeguridad()
+               silfide.getNombre(), "Silfide", silfide.getSalud(), silfide.getDaño()
             };
             modelo.addRow(newrow);
             jt_hadas.setModel(modelo);
             }
             if(hadas.get(i) instanceof Salamandras){
+                Salamandras salamandra=(Salamandras)hadas.get(i);
             Object[] newrow={
-               hadas.get(i).getNombre(), lugares.get(i).getDireccion(), lugares.get(i).getSeguridad()
+               salamandra.getNombre(), "Salamandra", salamandra.getSalud(), salamandra.getDaño()
             };
             modelo.addRow(newrow);
             jt_hadas.setModel(modelo);
@@ -220,6 +228,36 @@ public class principal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        int tamaletas=0, numbranquias=0, edad, estatura;
+        int resp=1;
+        String nombre;
+        nombre=JOptionPane.showInputDialog("Nombre");
+        edad=Integer.parseInt(JOptionPane.showInputDialog("Edad"));
+        estatura=Integer.parseInt(JOptionPane.showInputDialog("Estatura"));
+        while(resp==1){
+        tamaletas=Integer.parseInt(JOptionPane.showInputDialog("Tamaño de las aletas(menor o igual 5cm)"));
+            if (tamaletas>5) {
+                resp=1;
+            }else{
+                resp=0;
+            }
+        numbranquias=Integer.parseInt(JOptionPane.showInputDialog("Numero de branquias(menor a 8)"));
+            if (numbranquias>7) {
+                resp=1;
+            }else{
+                resp=0;
+            }
+            if (resp==1) {
+                JOptionPane.showMessageDialog(this, "Ingreso un valor incorrecto en una de las opciones vuelva a intentar");
+            }
+            
+        }
+        hadas.add(new Lamias(tamaletas, numbranquias, nombre, edad, estatura));
+        
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
