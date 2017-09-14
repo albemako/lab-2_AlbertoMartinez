@@ -8,6 +8,7 @@ package lab8_albertomartinez;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
  *
@@ -37,11 +38,16 @@ public class principal extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        popmenu = new javax.swing.JPopupMenu();
+        modificar = new javax.swing.JMenuItem();
+        eliminar = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_hadas = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         jButton5.setBackground(new java.awt.Color(0, 102, 255));
         jButton5.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
@@ -73,6 +79,11 @@ public class principal extends javax.swing.JFrame {
         jButton8.setBackground(new java.awt.Color(255, 51, 0));
         jButton8.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jButton8.setText("Salamandra");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
         jLabel2.setText("AGREGA UN HADA");
@@ -115,6 +126,10 @@ public class principal extends javax.swing.JFrame {
                 .addContainerGap(77, Short.MAX_VALUE))
         );
 
+        modificar.setText("jMenuItem1");
+
+        eliminar.setText("jMenuItem2");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
@@ -142,21 +157,26 @@ public class principal extends javax.swing.JFrame {
                 "Nombre", "Tipo", "Vida", "Daño"
             }
         ));
+        jt_hadas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jt_hadasMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jt_hadas);
+
+        jButton2.setText("Eliminar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Modificar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(353, 353, 353)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(404, 404, 404)
-                        .addComponent(jButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 123, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,6 +186,20 @@ public class principal extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton4)
                         .addGap(147, 147, 147))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(353, 353, 353)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(404, 404, 404)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,7 +212,11 @@ public class principal extends javax.swing.JFrame {
                 .addComponent(jButton4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         pack();
@@ -191,124 +229,172 @@ public class principal extends javax.swing.JFrame {
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         jt_hadas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nombre", "Tipo", "Vida", "Daño"
-            }
+                new Object[][]{},
+                new String[]{
+                    "Nombre", "Tipo", "Vida", "Daño"
+                }
         ));
-        
-        DefaultTableModel modelo=(DefaultTableModel)jt_hadas.getModel();
-        
+
+        DefaultTableModel modelo = (DefaultTableModel) jt_hadas.getModel();
+
         for (int i = 0; i < hadas.size(); i++) {
-            if(hadas.get(i) instanceof Lamias){
-            Lamias lamia = (Lamias)hadas.get(i);
-            Object[] newrow={
-               lamia.getNombre(), "Lamia", lamia.getSalud(), lamia.getDaño()
-            };
-            modelo.addRow(newrow);
-            jt_hadas.setModel(modelo);
+            if (hadas.get(i) instanceof Lamias) {
+                Lamias lamia = (Lamias) hadas.get(i);
+                Object[] newrow = {
+                    lamia.getNombre(), "Lamia", lamia.getSalud(), lamia.getDaño()
+                };
+                modelo.addRow(newrow);
+                jt_hadas.setModel(modelo);
             }
-            if(hadas.get(i) instanceof Hamadriades){
-            Hamadriades hamadriade=(Hamadriades)hadas.get(i);
-            Object[] newrow={
-               hamadriade.getNombre(), "Hamadriade", hamadriade.getSalud(), hamadriade.getDaño()
-            };
-            modelo.addRow(newrow);
-            jt_hadas.setModel(modelo);
+            if (hadas.get(i) instanceof Hamadriades) {
+                Hamadriades hamadriade = (Hamadriades) hadas.get(i);
+                Object[] newrow = {
+                    hamadriade.getNombre(), "Hamadriade", hamadriade.getSalud(), hamadriade.getDaño()
+                };
+                modelo.addRow(newrow);
+                jt_hadas.setModel(modelo);
             }
-            if(hadas.get(i) instanceof Silfides){
-                 Silfides silfide= (Silfides)hadas.get(i);
-            Object[] newrow={
-               silfide.getNombre(), "Silfide", silfide.getSalud(), silfide.getDaño()
-            };
-            modelo.addRow(newrow);
-            jt_hadas.setModel(modelo);
+            if (hadas.get(i) instanceof Silfides) {
+                Silfides silfide = (Silfides) hadas.get(i);
+                Object[] newrow = {
+                    silfide.getNombre(), "Silfide", silfide.getSalud(), silfide.getDaño()
+                };
+                modelo.addRow(newrow);
+                jt_hadas.setModel(modelo);
             }
-            if(hadas.get(i) instanceof Salamandras){
-                Salamandras salamandra=(Salamandras)hadas.get(i);
-            Object[] newrow={
-               salamandra.getNombre(), "Salamandra", salamandra.getSalud(), salamandra.getDaño()
-            };
-            modelo.addRow(newrow);
-            jt_hadas.setModel(modelo);
+            if (hadas.get(i) instanceof Salamandras) {
+                Salamandras salamandra = (Salamandras) hadas.get(i);
+                Object[] newrow = {
+                    salamandra.getNombre(), "Salamandra", salamandra.getSalud(), salamandra.getDaño()
+                };
+                modelo.addRow(newrow);
+                jt_hadas.setModel(modelo);
             }
         }
-        
-        
+
+
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        int tamaletas=0, numbranquias=0, edad, estatura;
-        int resp=1;
+        int tamaletas = 0, numbranquias = 0, edad, estatura;
+        int resp = 1;
         String nombre;
-        nombre=JOptionPane.showInputDialog("Nombre");
-        edad=Integer.parseInt(JOptionPane.showInputDialog("Edad"));
-        estatura=Integer.parseInt(JOptionPane.showInputDialog("Estatura"));
-        while(resp==1){
-        tamaletas=Integer.parseInt(JOptionPane.showInputDialog("Tamaño de las aletas(menor o igual 5cm)"));
-            if (tamaletas>5) {
-                resp=1;
-            }else{
-                resp=0;
+        nombre = JOptionPane.showInputDialog("Nombre");
+        edad = Integer.parseInt(JOptionPane.showInputDialog("Edad"));
+        estatura = Integer.parseInt(JOptionPane.showInputDialog("Estatura"));
+        while (resp == 1) {
+            tamaletas = Integer.parseInt(JOptionPane.showInputDialog("Tamaño de las aletas(menor o igual 5cm)"));
+            if (tamaletas > 5) {
+                resp = 1;
+            } else {
+                resp = 0;
             }
-        numbranquias=Integer.parseInt(JOptionPane.showInputDialog("Numero de branquias(menor a 8)"));
-            if (numbranquias>7) {
-                resp=1;
-            }else{
-                resp=0;
+            numbranquias = Integer.parseInt(JOptionPane.showInputDialog("Numero de branquias(menor a 8)"));
+            if (numbranquias > 7) {
+                resp = 1;
+            } else {
+                resp = 0;
             }
-            if (resp==1) {
+            if (resp == 1) {
                 JOptionPane.showMessageDialog(this, "Ingreso un valor incorrecto en una de las opciones vuelva a intentar");
             }
-            
+
         }
         hadas.add(new Lamias(tamaletas, numbranquias, nombre, edad, estatura));
-        
-        
+
+        JOptionPane.showMessageDialog(this, "Hada creada exitosamente");
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         int edad, estatura;
         String nombre;
-        nombre=JOptionPane.showInputDialog("Nombre");
-        edad=Integer.parseInt(JOptionPane.showInputDialog("Edad"));
-        estatura=Integer.parseInt(JOptionPane.showInputDialog("Estatura"));
-        
-        
+        nombre = JOptionPane.showInputDialog("Nombre");
+        edad = Integer.parseInt(JOptionPane.showInputDialog("Edad"));
+        estatura = Integer.parseInt(JOptionPane.showInputDialog("Estatura"));
+
         hadas.add(new Hamadriades(nombre, edad, estatura));
-        
-        
-        
+
+        JOptionPane.showMessageDialog(this, "Hada creada exitosamente");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        int alas=0, edad, estatura;
-        int resp=1;
+        int alas = 0, edad, estatura;
+        int resp = 1;
         String nombre;
-        nombre=JOptionPane.showInputDialog("Nombre");
-        edad=Integer.parseInt(JOptionPane.showInputDialog("Edad"));
-        estatura=Integer.parseInt(JOptionPane.showInputDialog("Estatura"));
-        while(resp==1){
-        alas=Integer.parseInt(JOptionPane.showInputDialog("Cantidad de alas(mayor a 6)"));
-            if (alas<6) {
-                resp=1;
-            }else{
-                resp=0;
+        nombre = JOptionPane.showInputDialog("Nombre");
+        edad = Integer.parseInt(JOptionPane.showInputDialog("Edad"));
+        estatura = Integer.parseInt(JOptionPane.showInputDialog("Estatura"));
+        while (resp == 1) {
+            alas = Integer.parseInt(JOptionPane.showInputDialog("Cantidad de alas(mayor o igual a 6)"));
+            if (alas < 6) {
+                resp = 1;
+            } else {
+                resp = 0;
             }
-            if (resp==1) {
+            if (resp == 1) {
                 JOptionPane.showMessageDialog(this, "Ingreso un valor incorrecto en una de las opciones vuelva a intentar");
             }
-            
+
         }
-        
-        hadas.add(new Silfides(alas, nombre, edad, estatura));
-        
-        
-        
-        
+
+        hadas.add(new Salamandras(alas, nombre, edad, estatura));
+
+        JOptionPane.showMessageDialog(this, "Hada creada exitosamente");
+
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        int alas = 0, edad, estatura;
+        int resp = 1;
+        String nombre;
+        nombre = JOptionPane.showInputDialog("Nombre");
+        edad = Integer.parseInt(JOptionPane.showInputDialog("Edad"));
+        estatura = Integer.parseInt(JOptionPane.showInputDialog("Estatura"));
+        while (resp == 1) {
+            alas = Integer.parseInt(JOptionPane.showInputDialog("Cantidad de alas(mayor a 16)"));
+            if (alas < 17) {
+                resp = 1;
+            } else {
+                resp = 0;
+            }
+            if (resp == 1) {
+                JOptionPane.showMessageDialog(this, "Ingreso un valor incorrecto en una de las opciones vuelva a intentar");
+            }
+
+        }
+
+        hadas.add(new Silfides(alas, nombre, edad, estatura));
+
+        JOptionPane.showMessageDialog(this, "Hada creada exitosamente");
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jt_hadasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_hadasMouseClicked
+        int row=jt_hadas.getSelectedRow();
+        popmenu.show(evt.getComponent(), evt.getX(), evt.getY());
+        if (evt.isMetaDown()) {
+            
+            DefaultTableModel modelo = (DefaultTableModel) jt_hadas.getModel();
+
+            popmenu.show(evt.getComponent(), evt.getX(), evt.getY());
+
+        }
+
+
+    }//GEN-LAST:event_jt_hadasMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        DefaultTableModel modelo
+                = (DefaultTableModel) jt_hadas.getModel();
+        int row = jt_hadas.getSelectedRow();
+        if (modelo.getRowCount() >= 0) {
+            modelo.removeRow(jt_hadas.getSelectedRow());
+            System.out.println(jt_hadas.getSelectedRow());
+            System.out.println(row);
+            hadas.remove(row);
+            jt_hadas.setModel(modelo);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -346,7 +432,10 @@ public class principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem eliminar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -357,11 +446,13 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JDialog jd_agregar;
     private javax.swing.JTable jt_hadas;
+    private javax.swing.JMenuItem modificar;
+    private javax.swing.JPopupMenu popmenu;
     // End of variables declaration//GEN-END:variables
-Hadas h=new Hadas();
-Lamias lam=new Lamias();
-Hamadriades ham=new Hamadriades();
-Silfides sil=new Silfides();
-Salamandras sal=new Salamandras();
-ArrayList<Hadas> hadas=new ArrayList();
+Hadas h = new Hadas();
+    Lamias lam = new Lamias();
+    Hamadriades ham = new Hamadriades();
+    Silfides sil = new Silfides();
+    Salamandras sal = new Salamandras();
+    ArrayList<Hadas> hadas = new ArrayList();
 }
