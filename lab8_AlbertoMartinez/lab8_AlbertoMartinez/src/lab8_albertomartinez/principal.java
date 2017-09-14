@@ -55,10 +55,20 @@ public class principal extends javax.swing.JFrame {
         jButton6.setBackground(new java.awt.Color(102, 204, 0));
         jButton6.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jButton6.setText("Hamadriades");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setBackground(new java.awt.Color(153, 255, 255));
         jButton7.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jButton7.setText("Silfides");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setBackground(new java.awt.Color(255, 51, 0));
         jButton8.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
@@ -258,6 +268,47 @@ public class principal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        int edad, estatura;
+        String nombre;
+        nombre=JOptionPane.showInputDialog("Nombre");
+        edad=Integer.parseInt(JOptionPane.showInputDialog("Edad"));
+        estatura=Integer.parseInt(JOptionPane.showInputDialog("Estatura"));
+        
+        
+        hadas.add(new Hamadriades(nombre, edad, estatura));
+        
+        
+        
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        int alas=0, edad, estatura;
+        int resp=1;
+        String nombre;
+        nombre=JOptionPane.showInputDialog("Nombre");
+        edad=Integer.parseInt(JOptionPane.showInputDialog("Edad"));
+        estatura=Integer.parseInt(JOptionPane.showInputDialog("Estatura"));
+        while(resp==1){
+        alas=Integer.parseInt(JOptionPane.showInputDialog("Cantidad de alas(mayor a 6)"));
+            if (alas<6) {
+                resp=1;
+            }else{
+                resp=0;
+            }
+            if (resp==1) {
+                JOptionPane.showMessageDialog(this, "Ingreso un valor incorrecto en una de las opciones vuelva a intentar");
+            }
+            
+        }
+        
+        hadas.add(new Silfides(alas, nombre, edad, estatura));
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
