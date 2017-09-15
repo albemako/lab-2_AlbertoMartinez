@@ -5,11 +5,14 @@
  */
 package lab8_albertomartinez;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Alberto
  */
-public class Hadas {
+public class Hadas implements Serializable{
+    public final long SerializableUID=123L;
     public String nombre;
     public int edad;
     public int estatura;//<=15
