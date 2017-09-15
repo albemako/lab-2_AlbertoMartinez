@@ -10,25 +10,16 @@ package lab8_albertomartinez;
  * @author Alberto
  */
 public class Hamadriades extends Hadas{
-    public int salud=373;
     public int saluda=173;
     public String descripcion="Ninfas ligadas a un árbol concreto de tal modo que si éste era cortado, la ninfa moría con él.";
-    public double daño=78;
 
     public Hamadriades() {
     }
 
-    public Hamadriades(String nombre, int edad, int estatura) {
-        super(nombre, edad, estatura);
+    public Hamadriades(int salud, int daño, String nombre, int edad, int estatura) {
+        super(salud, daño, nombre, edad, estatura);
     }
 
-    public int getSalud() {
-        return salud;
-    }
-
-    public void setSalud(int salud) {
-        this.salud = salud;
-    }
 
     public int getSaluda() {
         return saluda;
@@ -46,14 +37,6 @@ public class Hamadriades extends Hadas{
         this.descripcion = descripcion;
     }
 
-    public double getDaño() {
-        return daño;
-    }
 
-    public void setDaño(double daño) {
-        this.daño = daño;
-    }
-    
-    
     
 }

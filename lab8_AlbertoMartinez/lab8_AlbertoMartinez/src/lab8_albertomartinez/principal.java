@@ -291,6 +291,11 @@ public class principal extends javax.swing.JFrame {
         jButton9.setBackground(new java.awt.Color(204, 0, 0));
         jButton9.setFont(new java.awt.Font("Trebuchet MS", 0, 36)); // NOI18N
         jButton9.setText("Simulacion");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("Archivo");
         jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -481,7 +486,7 @@ public class principal extends javax.swing.JFrame {
             }
 
         }
-        hadas.add(new Lamias(tamaletas, numbranquias, nombre, edad, estatura));
+        hadas.add(new Lamias(tamaletas, numbranquias, 475, 57, nombre, edad, estatura));
 
         JOptionPane.showMessageDialog(this, "Hada creada exitosamente");
 
@@ -494,7 +499,7 @@ public class principal extends javax.swing.JFrame {
         edad = Integer.parseInt(JOptionPane.showInputDialog("Edad"));
         estatura = Integer.parseInt(JOptionPane.showInputDialog("Estatura"));
 
-        hadas.add(new Hamadriades(nombre, edad, estatura));
+        hadas.add(new Hamadriades(373, 78, nombre, edad, estatura));
 
         JOptionPane.showMessageDialog(this, "Hada creada exitosamente");
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -519,7 +524,7 @@ public class principal extends javax.swing.JFrame {
 
         }
 
-        hadas.add(new Salamandras(alas, nombre, edad, estatura));
+        hadas.add(new Silfides(alas, 563, 67, nombre, edad, estatura));
 
         JOptionPane.showMessageDialog(this, "Hada creada exitosamente");
 
@@ -545,7 +550,7 @@ public class principal extends javax.swing.JFrame {
 
         }
 
-        hadas.add(new Silfides(alas, nombre, edad, estatura));
+        hadas.add(new Salamandras(alas,  683, 71,nombre, edad, estatura));
 
         JOptionPane.showMessageDialog(this, "Hada creada exitosamente");
     }//GEN-LAST:event_jButton8ActionPerformed
@@ -646,6 +651,11 @@ public class principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments

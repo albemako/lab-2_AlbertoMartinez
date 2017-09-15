@@ -12,15 +12,16 @@ package lab8_albertomartinez;
 public class Lamias extends Hadas{
     public int tamaletas;//<=5cm
     public int numbranquias;//<8
-    public int salud=45;
+
     public String descripcion="Su poder consta en atrapar a sus enemigos con su encanto";
-    public double daño=57.0;
+
 
     public Lamias() {
+        
     }
 
-    public Lamias(int tamaletas, int numbranquias, String nombre, int edad, int estatura) {
-        super(nombre, edad, estatura);
+    public Lamias(int tamaletas, int numbranquias, int salud, int daño, String nombre, int edad, int estatura) {
+        super(salud, daño, nombre, edad, estatura);
         this.tamaletas = tamaletas;
         this.numbranquias = numbranquias;
     }
@@ -42,14 +43,6 @@ public class Lamias extends Hadas{
         this.numbranquias = numbranquias;
     }
 
-    public int getSalud() {
-        return salud;
-    }
-
-    public void setSalud(int salud) {
-        this.salud = salud;
-    }
-
     public String getDescripcion() {
         return descripcion;
     }
@@ -58,14 +51,6 @@ public class Lamias extends Hadas{
         this.descripcion = descripcion;
     }
 
-    public double getDaño() {
-        return daño;
-    }
-
-    public void setDaño(double daño) {
-        this.daño = daño;
-    }
-    
     
     
 }

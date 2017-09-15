@@ -10,27 +10,19 @@ package lab8_albertomartinez;
  * @author Alberto
  */
 public class Silfides extends Hadas{
-    public int salud=573;
     public int alas;//6 0 mas
     public String descripcion="el poder de lanzar tornados desde sus manos";
-    public double daño=177;
 
-    public Silfides(int alas, String nombre, int edad, int estatura) {
-        super(nombre, edad, estatura);
+    public Silfides(int alas, int salud, int daño, String nombre, int edad, int estatura) {
+        super(salud, daño, nombre, edad, estatura);
         this.alas = alas;
     }
+
+
 
     public Silfides() {
     }
 
-
-    public int getSalud() {
-        return salud;
-    }
-
-    public void setSalud(int salud) {
-        this.salud = salud;
-    }
 
     public int getAlas() {
         return alas;
@@ -46,14 +38,6 @@ public class Silfides extends Hadas{
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public double getDaño() {
-        return daño;
-    }
-
-    public void setDaño(double daño) {
-        this.daño = daño;
     }
     
     
