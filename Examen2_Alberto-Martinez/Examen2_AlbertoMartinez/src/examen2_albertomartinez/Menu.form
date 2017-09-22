@@ -4,100 +4,8 @@
   <NonVisualComponents>
     <Container class="javax.swing.JDialog" name="JD_usuarios">
 
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="170" pref="170" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="224" pref="224" max="-2" attributes="0"/>
-                          <Component id="jButton8" min="-2" pref="110" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="tf_nombre" min="-2" pref="130" max="-2" attributes="0"/>
-                              <Component id="tf_edad" min="-2" pref="130" max="-2" attributes="0"/>
-                              <Component id="tf_user" min="-2" pref="130" max="-2" attributes="0"/>
-                              <Component id="pf_pass" min="-2" pref="130" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jButton7" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="190" pref="190" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" min="-2" pref="110" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="460" pref="460" max="-2" attributes="0"/>
-                          <Component id="jButton9" min="-2" pref="110" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace pref="61" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jButton8" min="-2" pref="40" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
-                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
-                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="tf_nombre" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                  <Component id="tf_edad" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                  <Component id="tf_user" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                  <Component id="pf_pass" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                                  <Component id="jButton7" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jScrollPane1" min="-2" pref="140" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-                  <Component id="jButton9" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace pref="28" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JButton" name="jButton7">
@@ -107,40 +15,85 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
           </Events>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="170" y="290" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Crear Usuario"/>
           </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="170" y="70" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="tf_nombre">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_nombreActionPerformed"/>
           </Events>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="140" y="100" width="130" height="30"/>
+            </Constraint>
+          </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="tf_edad">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="140" y="150" width="130" height="-1"/>
+            </Constraint>
+          </Constraints>
         </Component>
         <Component class="javax.swing.JPasswordField" name="pf_pass">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="140" y="250" width="130" height="-1"/>
+            </Constraint>
+          </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nombre"/>
           </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="80" y="100" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="text" type="java.lang.String" value="Edad"/>
           </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="80" y="150" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="text" type="java.lang.String" value="Password"/>
           </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="70" y="250" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
           </AuxValues>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="460" y="110" width="110" height="140"/>
+            </Constraint>
+          </Constraints>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
@@ -160,22 +113,51 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Listar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+          </Events>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="460" y="60" width="110" height="40"/>
+            </Constraint>
+          </Constraints>
         </Component>
         <Component class="javax.swing.JButton" name="jButton9">
           <Properties>
             <Property name="text" type="java.lang.String" value="Eliminar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
+          </Events>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="460" y="270" width="110" height="50"/>
+            </Constraint>
+          </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="text" type="java.lang.String" value="Username"/>
           </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="70" y="200" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="tf_user">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="140" y="200" width="130" height="-1"/>
+            </Constraint>
+          </Constraints>
         </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JDialog" name="JD_canciones">
+      <Events>
+        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="JD_cancionesMouseMoved"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -205,22 +187,23 @@
                           <Component id="tf_duracion" min="-2" pref="163" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="45" pref="45" max="-2" attributes="0"/>
-                          <Component id="tf_genero" min="-2" pref="163" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="70" pref="70" max="-2" attributes="0"/>
-                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
                           <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="190" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
                           <Component id="jButton10" min="-2" pref="230" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="45" pref="45" max="-2" attributes="0"/>
+                                  <Component id="tf_genero" min="-2" pref="163" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace pref="45" max="32767" attributes="0"/>
@@ -255,9 +238,9 @@
                       </Group>
                       <Component id="tf_genero" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="46" pref="46" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" pref="110" max="-2" attributes="0"/>
                   <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                   <Component id="jButton10" min="-2" pref="66" max="-2" attributes="0"/>
@@ -308,6 +291,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="agregar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton10ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
@@ -343,21 +329,20 @@
                           <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
+                          <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                                   <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jTextField1" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace min="23" pref="23" max="-2" attributes="0"/>
+                                  <Component id="tf_nombrealbum" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                   <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jTextField2" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace min="28" pref="28" max="-2" attributes="0"/>
+                                  <Component id="tf_artistaalbum" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                  <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
                                   <Component id="jButton12" min="-2" pref="130" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -367,6 +352,8 @@
                               <Group type="102" attributes="0">
                                   <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                                   <Component id="jScrollPane3" min="-2" pref="120" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -374,12 +361,12 @@
                           <EmptySpace min="410" pref="410" max="-2" attributes="0"/>
                           <Component id="jButton13" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="343" max="-2" attributes="0"/>
-                          <Component id="jScrollPane4" min="-2" pref="367" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="360" pref="360" max="-2" attributes="0"/>
+                          <Component id="jScrollPane4" min="-2" pref="350" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                  <EmptySpace pref="37" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -392,27 +379,31 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_nombrealbum" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_artistaalbum" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
                           <Component id="jButton12" min="-2" pref="90" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="jButton11" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-                          <Component id="jScrollPane3" min="-2" pref="160" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                          <Component id="jButton2" min="-2" pref="48" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jButton11" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                              <Component id="jScrollPane3" min="-2" pref="160" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <Component id="jButton13" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
                   <Component id="jScrollPane4" min="-2" pref="90" max="-2" attributes="0"/>
+                  <EmptySpace pref="37" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -423,9 +414,9 @@
             <Property name="text" type="java.lang.String" value="Crear album"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="tf_nombrealbum">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="tf_artistaalbum">
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane3">
           <AuxValues>
@@ -434,7 +425,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JList" name="jt_albums">
+            <Component class="javax.swing.JList" name="jl_albums">
               <Properties>
                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="new DefaultListModel()" type="code"/>
@@ -471,16 +462,25 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Actualizar lista de albums"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton11ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton12">
           <Properties>
             <Property name="text" type="java.lang.String" value="Crear"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton12ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton13">
           <Properties>
             <Property name="text" type="java.lang.String" value="Mostrar canciones de album seleccionado"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton13ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel13">
           <Properties>
@@ -491,6 +491,14 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Artista"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Eliminar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -558,6 +566,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="GO"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton14ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel15">
           <Properties>
@@ -576,6 +587,101 @@
         </Component>
       </SubComponents>
     </Container>
+    <Container class="javax.swing.JDialog" name="JD_submenu">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="jButton15" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                          <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                          <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="tf_nombreplaylist" min="-2" pref="90" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                          <Component id="jButton16" min="-2" pref="199" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="451" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="jButton15" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                  <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="tf_nombreplaylist" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jButton16" min="-2" pref="64" max="-2" attributes="0"/>
+                  <EmptySpace pref="227" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="jButton15">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Explorar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton15ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel18">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Crear Playlist"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="tf_nombreplaylist">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel19">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nombre"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton16">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Crear Playlist"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton16ActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JDialog" name="JD_explorar">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -584,6 +690,9 @@
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
+  <Events>
+    <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="formMouseMoved"/>
+  </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -603,7 +712,7 @@
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jButton1" max="32767" attributes="0"/>
-                  <Component id="jButton2" max="32767" attributes="0"/>
+                  <Component id="b_canciones" max="32767" attributes="0"/>
                   <Component id="jButton3" max="32767" attributes="0"/>
                   <Component id="jButton4" max="32767" attributes="0"/>
                   <Component id="jButton5" alignment="0" max="32767" attributes="0"/>
@@ -619,7 +728,7 @@
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+              <Component id="b_canciones" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jButton3" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -642,12 +751,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="b_canciones">
       <Properties>
         <Property name="text" type="java.lang.String" value="Canciones"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b_cancionesActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton3">

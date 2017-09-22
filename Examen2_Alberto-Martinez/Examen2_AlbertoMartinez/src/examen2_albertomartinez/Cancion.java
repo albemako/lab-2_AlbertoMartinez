@@ -5,11 +5,14 @@
  */
 package examen2_albertomartinez;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Alberto
  */
-public class Cancion {
+public class Cancion implements Serializable{
+    public final long SerializableUID=123L;
     public String nombre;
     public Double duracion;
     public String artista;

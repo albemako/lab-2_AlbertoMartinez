@@ -18,11 +18,11 @@ public class Admin {
         this.archivo= new File(path);
     }
 
-    public ArrayList<Usuario> getUsuarios() {
+    public ArrayList getUsuarios() {
         return datos;
     }
 
-    public void setUsuarios(ArrayList<Usuario> datos) {
+    public void setUsuarios(ArrayList datos) {
         this.datos = datos;
     }
 
@@ -40,12 +40,13 @@ public class Admin {
     public void cargarArchivo() {
         try {
             datos = new ArrayList();
-            Usuario temp;
+            Object temp;
             if (archivo.exists()) {
                 FileInputStream entrada = new FileInputStream(archivo);
                 ObjectInputStream objeto = new ObjectInputStream(entrada);
                 try {
-                    while ((temp = (Usuario) objeto.readObject()) != null) {
+                    while ((temp = objeto.readObject()) != null) {
+                        
                         datos.add(temp);
                     }
                 } catch (EOFException ex) {

@@ -5,13 +5,15 @@
  */
 package examen2_albertomartinez;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Alberto
  */
-public class Playlist {
+public class Playlist implements Serializable{
+    public final long SerializableUID=123L;
     public String nombre;
     public ArrayList <Cancion> canciones=new ArrayList();
 

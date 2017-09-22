@@ -5,23 +5,25 @@
  */
 package examen2_albertomartinez;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Alberto
  */
-public class Album {
+public class Album implements Serializable{
+    public final long SerializableUID=123L;
     public String nombre;
-    public String Artista;
-    public ArrayList <Cancion> canciones=new ArrayList();
+    public String artista;
+    public ArrayList<Cancion> canciones=new ArrayList();
 
     public Album() {
     }
 
-    public Album(String nombre, String Artista) {
+    public Album(String nombre, String artista) {
         this.nombre = nombre;
-        this.Artista = Artista;
+        this.artista = artista;
     }
 
     public String getNombre() {
@@ -33,11 +35,11 @@ public class Album {
     }
 
     public String getArtista() {
-        return Artista;
+        return artista;
     }
 
-    public void setArtista(String Artista) {
-        this.Artista = Artista;
+    public void setArtista(String artista) {
+        this.artista = artista;
     }
 
     public ArrayList<Cancion> getCanciones() {
@@ -50,7 +52,7 @@ public class Album {
 
     @Override
     public String toString() {
-        return nombre;
+        return  nombre ;
     }
     
     
